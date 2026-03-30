@@ -2,6 +2,8 @@
    LQM Mississauga — Global Styles
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400&display=swap');
+
 /* --- Reset & Base -------------------------------------------------------- */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -164,20 +166,6 @@ section {
   border-bottom-color: #C0392B;
 }
 
-.nav-links .nav-cta a {
-  border-bottom: none;
-  padding: 8px 20px;
-  background: #C0392B;
-  color: #ffffff;
-  border-radius: 4px;
-  font-weight: 600;
-  transition: background 0.2s;
-}
-
-.nav-links .nav-cta a:hover {
-  background: #a93226;
-  color: #ffffff;
-}
 
 /* Hamburger */
 .nav-hamburger {
@@ -244,14 +232,6 @@ section {
     font-size: 1rem;
   }
 
-  .nav-links .nav-cta {
-    padding: 12px 24px;
-  }
-
-  .nav-links .nav-cta a {
-    display: inline-block;
-    padding: 10px 24px;
-  }
 }
 
 /* --- Hero --------------------------------------------------------------- */
@@ -282,6 +262,7 @@ section {
   letter-spacing: 3px;
   text-transform: uppercase;
   margin-bottom: 20px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7);
 }
 
 .hero-headline {
@@ -290,13 +271,15 @@ section {
   color: #ffffff;
   line-height: 1.25;
   margin-bottom: 12px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7);
 }
 
 .hero-arabic {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  color: rgba(255, 255, 255, 0.55);
+  font-family: 'Scheherazade New', Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.7rem, 3.5vw, 2.3rem);
+  color: #ffffff;
   margin-bottom: 36px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.8), 0 0 20px rgba(0,0,0,0.6);
   direction: rtl;
 }
 
@@ -310,8 +293,9 @@ section {
   background: #f9f9f9;
 }
 
-.accordion {
-  max-width: 780px;
+/* --- Classes List (data-driven) ----------------------------------------- */
+#classes-list {
+  max-width: 860px;
   margin: 0 auto;
 }
 
@@ -319,16 +303,17 @@ section {
   background: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: 6px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   overflow: hidden;
 }
 
+/* Closed-state trigger: single line summary + +/− icon */
 .accordion-trigger {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 24px;
+  padding: 18px 24px;
   background: none;
   border: none;
   cursor: pointer;
@@ -340,47 +325,31 @@ section {
   background: #fafafa;
 }
 
-.accordion-trigger-left {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.class-summary {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.4;
 }
 
-.accordion-class-name {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.1rem;
+.class-code {
+  font-weight: 600;
+  font-size: 17px;
   color: #1a1a1a;
-  font-weight: bold;
 }
 
-.accordion-class-meta {
-  font-size: 0.85rem;
-  color: #888;
+.class-toggle-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+  color: #C0392B;
+  font-weight: 300;
+  flex-shrink: 0;
+  user-select: none;
 }
 
-/* "Coming Soon" accordion rows — non-interactive */
-.accordion-trigger--disabled {
-  cursor: default;
-  pointer-events: none;
-  opacity: 0.6;
-}
-
-.accordion-coming-soon-badge {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #888;
-  background: #f0f0f0;
-  border-radius: 3px;
-  padding: 2px 8px;
-  margin-left: 10px;
-  vertical-align: middle;
-}
-
+/* Open state */
 .accordion-body {
   display: none;
-  padding: 0 24px 24px;
+  padding: 20px 24px 24px;
   border-top: 1px solid #e0e0e0;
 }
 
@@ -388,21 +357,27 @@ section {
   display: block;
 }
 
+/* 3-column detail grid */
 .class-detail-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  margin: 20px 0 16px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 24px;
+  margin-bottom: 24px;
 }
 
 .class-detail-item {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 4px;
+}
+
+/* Comments row spans all 3 columns */
+.class-detail-item--full {
+  grid-column: 1 / -1;
 }
 
 .class-detail-label {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #888;
@@ -410,25 +385,56 @@ section {
 }
 
 .class-detail-value {
-  font-size: 0.95rem;
-  color: #1a1a1a;
-}
-
-.class-description {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.class-placeholder {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 24px;
-  color: #aaa;
-  font-style: italic;
   font-size: 0.9rem;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+
+/* Register button variants */
+.btn-register {
+  display: inline-block;
+}
+
+.btn-status-coming-soon {
+  background: #999999;
+  color: #ffffff;
+  cursor: default;
+  pointer-events: none;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.btn-status-closed {
+  background: #555555;
+  color: #ffffff;
+  cursor: default;
+  pointer-events: none;
+  border: none;
+  border-radius: 4px;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Responsive: collapse to 1 column on mobile */
+@media (max-width: 600px) {
+  .class-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .class-detail-item--full {
+    grid-column: 1;
+  }
+  .accordion-trigger {
+    padding: 16px 18px;
+  }
+  .accordion-body {
+    padding: 16px 18px 20px;
+  }
 }
 
 /* --- Resources ---------------------------------------------------------- */
@@ -468,34 +474,46 @@ section {
 }
 
 .accordion-chevron {
-  font-size: 20px;
+  font-size: 22px;
   color: #C0392B;
-  transition: transform 0.3s ease;
   display: inline-block;
   flex-shrink: 0;
-}
-
-.accordion-header.open .accordion-chevron {
-  transform: rotate(90deg);
+  user-select: none;
+  line-height: 1;
 }
 
 .accordion-content {
   overflow: hidden;
   max-height: 0;
+  padding: 0;
   transition: max-height 0.4s ease;
 }
 
-.accordion-content.open {
-  max-height: 3000px;
+/* Inner wrapper carries all padding — keeps it inside the clipped container */
+.accordion-inner {
+  padding: 24px 0 40px;
 }
 
-/* Inner padding so content isn't flush against the header border */
-.accordion-content > * {
-  padding-top: 24px;
+/* Index link above Madinah tabs */
+.madinah-index-link {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  font-weight: 500;
 }
 
-.accordion-content > *:last-child {
-  padding-bottom: 8px;
+.madinah-index-link:hover {
+  background: #fff0ee;
+  border-color: #C0392B;
+  color: #C0392B;
+  text-decoration: none;
 }
 
 /* ---- Madinah tabs ---- */
@@ -1292,5 +1310,116 @@ section {
 @media (max-width: 480px) {
   .done-card {
     padding: 32px 24px;
+  }
+}
+
+/* ==========================================================================
+   Responsive — Consolidated fixes
+   Fills in gaps in existing breakpoints and enforces no-overflow rule.
+   ========================================================================== */
+
+/* Global: never allow horizontal scrollbar */
+body {
+  overflow-x: hidden;
+}
+
+/* Accordion content must always stay inside its container.
+   CSS overflow:hidden is the source of truth — JS no longer
+   sets overflow, so this rule always wins. */
+.accordion-content {
+  overflow: hidden;
+}
+
+/* ---- Tablet ≤768px -------------------------------------------------------- */
+@media (max-width: 768px) {
+
+  /* Reduce section vertical padding */
+  section {
+    padding: 60px 0;
+  }
+
+  /* Logo slightly smaller */
+  .nav-logo img {
+    max-height: 36px;
+  }
+
+  /* Hero headline explicit size */
+  .hero-headline {
+    font-size: 32px;
+  }
+}
+
+/* ---- Classes: 3-col → 2-col between 601px and 768px ---------------------- */
+@media (min-width: 601px) and (max-width: 768px) {
+  .class-detail-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .class-detail-item--full {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---- Mobile ≤480px -------------------------------------------------------- */
+@media (max-width: 480px) {
+
+  /* Tighter section padding */
+  section {
+    padding: 48px 0;
+  }
+
+  /* Typography */
+  .section-title {
+    font-size: 1.5rem;
+  }
+  .section-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 32px;
+  }
+
+  /* Nav logo */
+  .nav-logo img {
+    max-height: 32px;
+  }
+
+  /* Hero */
+  .hero-headline {
+    font-size: 26px;
+  }
+  .hero-arabic {
+    font-size: 1.2rem;
+    margin-bottom: 28px;
+  }
+  .hero-cta {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  /* Classes — status buttons full width */
+  .btn-status-coming-soon,
+  .btn-status-closed {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  /* Resources — accordion title smaller */
+  .accordion-title {
+    font-size: 17px;
+  }
+
+  /* Madinah tab buttons */
+  .tab-btn {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  /* Index link */
+  .madinah-index-link {
+    font-size: 0.82rem;
+    padding: 7px 13px;
   }
 }

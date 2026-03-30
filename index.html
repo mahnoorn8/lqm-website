@@ -35,7 +35,7 @@
         <li><a href="#classes">Classes</a></li>
         <li><a href="#resources">Resources</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li class="nav-cta"><a href="#classes">Register</a></li>
+
       </ul>
     </div>
   </nav>
@@ -60,115 +60,9 @@
     <div class="container">
       <hr class="section-divider" />
       <h2 class="section-title">Current Classes</h2>
-      <p class="section-subtitle">Active classes are open for registration — coming soon classes will be announced shortly.</p>
+      <p class="section-subtitle">All classes are free. Select a class to view details and register.</p>
 
-      <div class="accordion" id="classes-accordion">
-
-        <!-- Baku 25 -->
-        <div class="accordion-item">
-          <button
-            class="accordion-trigger"
-            aria-expanded="false"
-            aria-controls="baku-25-body"
-          >
-            <div class="accordion-trigger-left">
-              <span class="accordion-class-name">Baku 25</span>
-              <span class="accordion-class-meta">Level 1 &mdash; Online &mdash; Sundays 6:30–9:15 AM EST</span>
-            </div>
-          </button>
-
-          <div class="accordion-body" id="baku-25-body" role="region" aria-label="Baku 25 details">
-            <p class="class-description">
-              Begin your journey to understanding the Qur'an without translation. This course covers
-              Madinah Book 1, establishing the essential foundations of Arabic grammar and sentence structure.
-            </p>
-            <div class="class-detail-grid">
-              <div class="class-detail-item">
-                <span class="class-detail-label">Instructor</span>
-                <span class="class-detail-value">Javid Sheikh</span>
-              </div>
-              <div class="class-detail-item">
-                <span class="class-detail-label">Schedule</span>
-                <span class="class-detail-value">Sundays @ 6:30 AM – 9:15 AM EST</span>
-              </div>
-              <div class="class-detail-item">
-                <span class="class-detail-label">Prerequisite</span>
-                <span class="class-detail-value">Ability to read Qur'an</span>
-              </div>
-              <div class="class-detail-item">
-                <span class="class-detail-label">Started</span>
-                <span class="class-detail-value">September 14, 2025</span>
-              </div>
-            </div>
-            <a href="/register/baku-25/" class="btn btn-primary">Register for Baku 25</a>
-          </div>
-        </div>
-
-        <!-- Baghdad 24 -->
-        <div class="accordion-item">
-          <button
-            class="accordion-trigger"
-            aria-expanded="false"
-            aria-controls="baghdad-24-body"
-          >
-            <div class="accordion-trigger-left">
-              <span class="accordion-class-name">Baghdad 24</span>
-              <span class="accordion-class-meta">Level 1 – LQ101 &mdash; Sundays 6:30–9:15 AM</span>
-            </div>
-          </button>
-
-          <div class="accordion-body" id="baghdad-24-body" role="region" aria-label="Baghdad 24 details">
-            <div class="class-detail-grid">
-              <div class="class-detail-item">
-                <span class="class-detail-label">Instructor</span>
-                <span class="class-detail-value">Javid Sheikh</span>
-              </div>
-              <div class="class-detail-item">
-                <span class="class-detail-label">Schedule</span>
-                <span class="class-detail-value">Sundays @ 6:30 – 9:15 AM</span>
-              </div>
-              <div class="class-detail-item">
-                <span class="class-detail-label">Prerequisite</span>
-                <span class="class-detail-value">Ability to read the Qur'an</span>
-              </div>
-              <div class="class-detail-item">
-                <span class="class-detail-label">Start Date</span>
-                <span class="class-detail-value">September 14, 2025</span>
-              </div>
-            </div>
-            <a href="/register/baghdad-24/" class="btn btn-primary">Register for Baghdad 24</a>
-          </div>
-        </div>
-
-        <!-- Placeholder Class 3 -->
-        <!-- TODO: replace with real class data -->
-        <div class="accordion-item">
-          <div class="accordion-trigger accordion-trigger--disabled" aria-disabled="true">
-            <div class="accordion-trigger-left">
-              <span class="accordion-class-name">
-                In Person — Toronto
-                <span class="accordion-coming-soon-badge">Coming Soon</span>
-              </span>
-              <span class="accordion-class-meta">Level 1</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Placeholder Class 4 -->
-        <!-- TODO: replace with real class data -->
-        <div class="accordion-item">
-          <div class="accordion-trigger accordion-trigger--disabled" aria-disabled="true">
-            <div class="accordion-trigger-left">
-              <span class="accordion-class-name">
-                In Person — Toronto
-                <span class="accordion-coming-soon-badge">Coming Soon</span>
-              </span>
-              <span class="accordion-class-meta">Level 1</span>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /.accordion -->
+      <div id="classes-list"></div>
     </div>
   </section>
 
@@ -187,9 +81,15 @@
       <div class="resource-group" id="rg-madinah">
         <div class="accordion-header" data-target="madinah-content">
           <span class="accordion-title">Madinah Book Resources</span>
-          <span class="accordion-chevron">›</span>
+          <span class="accordion-chevron">+</span>
         </div>
         <div class="accordion-content" id="madinah-content" style="transition: max-height 0.3s ease;">
+        <div class="accordion-inner">
+
+        <a href="https://ia801300.us.archive.org/30/items/madinah-books-index/Madinah%20Books%27%20Index.pdf"
+           class="madinah-index-link" target="_blank" rel="noopener noreferrer">
+          Madinah Books Index (all 3 books) ↗
+        </a>
 
         <div class="madinah-tabs">
           <div class="tab-nav" role="tablist" aria-label="Madinah Book resources">
@@ -226,6 +126,27 @@
             </div>
 
             <div class="res-sub">
+              <h4 class="res-sub-title">Textbooks</h4>
+              <div class="dl-cards">
+                <a href="http://www.archive.org/download/ArabicLanguageCourseBooks/Madina_Book1_Arabic_Text.pdf"
+                   class="dl-card" target="_blank" rel="noopener noreferrer">
+                  <span class="dl-card-type">PDF</span>
+                  <span class="dl-card-label">Text Book (Arabic)</span>
+                </a>
+                <a href="http://www.archive.org/download/ArabicLanguageCourseBooks/Madina_Book1_English_Key.pdf"
+                   class="dl-card" target="_blank" rel="noopener noreferrer">
+                  <span class="dl-card-type">PDF</span>
+                  <span class="dl-card-label">Key (English)</span>
+                </a>
+                <a href="http://www.archive.org/download/ArabicLanguageCourseBooks/Madina_Book1_Solutions.pdf"
+                   class="dl-card" target="_blank" rel="noopener noreferrer">
+                  <span class="dl-card-type">PDF</span>
+                  <span class="dl-card-label">Key to Exercises</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="res-sub">
               <h4 class="res-sub-title">Annotated Solutions — Lessons 1–23</h4>
               <div class="solutions-grid">
                 <a href="https://archive.org/download/MadinahBook1_Annotated_Solution/MadinahBook1_L01_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L01</a>
@@ -251,27 +172,6 @@
                 <a href="https://archive.org/download/MadinahBook1_Annotated_Solution/MadinahBook1_L21_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L21</a>
                 <a href="https://archive.org/download/MadinahBook1_Annotated_Solution/MadinahBook1_L22_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L22</a>
                 <a href="https://archive.org/download/MadinahBook1_Annotated_Solution/MadinahBook1_L23_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L23</a>
-              </div>
-            </div>
-
-            <div class="res-sub">
-              <h4 class="res-sub-title">Textbooks</h4>
-              <div class="dl-cards">
-                <a href="http://www.archive.org/download/ArabicLanguageCourseBooks/Madina_Book1_Arabic_Text.pdf"
-                   class="dl-card" target="_blank" rel="noopener noreferrer">
-                  <span class="dl-card-type">PDF</span>
-                  <span class="dl-card-label">Text Book (Arabic)</span>
-                </a>
-                <a href="http://www.archive.org/download/ArabicLanguageCourseBooks/Madina_Book1_English_Key.pdf"
-                   class="dl-card" target="_blank" rel="noopener noreferrer">
-                  <span class="dl-card-type">PDF</span>
-                  <span class="dl-card-label">Key (English)</span>
-                </a>
-                <a href="http://www.archive.org/download/ArabicLanguageCourseBooks/Madina_Book1_Solutions.pdf"
-                   class="dl-card" target="_blank" rel="noopener noreferrer">
-                  <span class="dl-card-type">PDF</span>
-                  <span class="dl-card-label">Key to Exercises</span>
-                </a>
               </div>
             </div>
 
@@ -322,6 +222,43 @@
               </div>
             </div>
 
+            <div class="res-sub">
+              <h4 class="res-sub-title">Annotated Solutions — Lessons 1–31</h4>
+              <div class="solutions-grid">
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L01_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L01</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L02_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L02</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L03_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L03</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L04_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L04</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L05_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L05</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L06_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L06</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L07_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L07</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L08_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L08</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L09_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L09</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L10_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L10</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L11_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L11</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L12_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L12</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L13_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L13</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L14_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L14</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L15_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L15</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L16_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L16</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L17_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L17</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L18_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L18</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L19_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L19</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L20_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L20</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L21_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L21</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L22_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L22</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L23_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L23</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L24_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L24</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L25_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L25</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L26_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L26</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L27_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L27</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L28_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L28</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L29_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L29</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L30_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L30</a>
+                <a href="https://archive.org/download/MadinahBook2_Annotated_Solution/MadinahBook2_L31_AS.pdf" class="solution-btn" target="_blank" rel="noopener noreferrer">L31</a>
+              </div>
+            </div>
+
           </div><!-- /tab-book2 -->
 
           <!-- ---- Book 3 ------------------------------------------------ -->
@@ -339,6 +276,27 @@
                    class="dl-card" target="_blank" rel="noopener noreferrer">
                   <span class="dl-card-type">PDF</span>
                   <span class="dl-card-label">Class Handouts</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="res-sub">
+              <h4 class="res-sub-title">Textbooks</h4>
+              <div class="dl-cards">
+                <a href="http://www.archive.org/download/ArabicLanguageCourseBooks/Madina_Book3_Arabic_Text.pdf"
+                   class="dl-card" target="_blank" rel="noopener noreferrer">
+                  <span class="dl-card-type">PDF</span>
+                  <span class="dl-card-label">Text Book (Arabic)</span>
+                </a>
+                <a href="https://ia800900.us.archive.org/26/items/ArabicLanguageCourseBooks/Madina_Book3_English_Key.pdf"
+                   class="dl-card" target="_blank" rel="noopener noreferrer">
+                  <span class="dl-card-type">PDF</span>
+                  <span class="dl-card-label">Key (English)</span>
+                </a>
+                <a href="http://www.archive.org/download/ArabicLanguageCourseBooks/Madina_Book3_Solutions.pdf"
+                   class="dl-card" target="_blank" rel="noopener noreferrer">
+                  <span class="dl-card-type">PDF</span>
+                  <span class="dl-card-label">Key to Exercises</span>
                 </a>
               </div>
             </div>
@@ -385,38 +343,11 @@
               </div>
             </div>
 
-            <div class="res-sub">
-              <h4 class="res-sub-title">Textbooks</h4>
-              <div class="dl-cards">
-                <a href="http://www.archive.org/download/ArabicLanguageCourseBooks/Madina_Book3_Arabic_Text.pdf"
-                   class="dl-card" target="_blank" rel="noopener noreferrer">
-                  <span class="dl-card-type">PDF</span>
-                  <span class="dl-card-label">Text Book (Arabic)</span>
-                </a>
-                <a href="https://ia800900.us.archive.org/26/items/ArabicLanguageCourseBooks/Madina_Book3_English_Key.pdf"
-                   class="dl-card" target="_blank" rel="noopener noreferrer">
-                  <span class="dl-card-type">PDF</span>
-                  <span class="dl-card-label">Key (English)</span>
-                </a>
-                <a href="http://www.archive.org/download/ArabicLanguageCourseBooks/Madina_Book3_Solutions.pdf"
-                   class="dl-card" target="_blank" rel="noopener noreferrer">
-                  <span class="dl-card-type">PDF</span>
-                  <span class="dl-card-label">Key to Exercises</span>
-                </a>
-              </div>
-            </div>
-
           </div><!-- /tab-book3 -->
 
         </div><!-- /.madinah-tabs -->
 
-        <div class="res-shared-link">
-          <a href="https://ia801300.us.archive.org/30/items/madinah-books-index/Madinah%20Books%27%20Index.pdf"
-             target="_blank" rel="noopener noreferrer">
-            Madinah Books Index (all 3 books) ↗
-          </a>
-        </div>
-
+        </div><!-- /accordion-inner -->
         </div><!-- /.resource-group-body: Madinah -->
       </div><!-- /.resource-group: Madinah -->
 
@@ -426,9 +357,10 @@
       <div class="resource-group" id="rg-workbooks">
         <div class="accordion-header" data-target="workbooks-content">
           <span class="accordion-title">Qur'an Analysis Workbooks</span>
-          <span class="accordion-chevron">›</span>
+          <span class="accordion-chevron">+</span>
         </div>
         <div class="accordion-content" id="workbooks-content" style="transition: max-height 0.3s ease;">
+        <div class="accordion-inner">
         <div class="workbook-list">
           <a href="https://archive.org/download/lqmississauga-quran-analysis-workbook-v-1.1/LQMississauga%20-%20Quran%20Analysis%20Workbook%20v1.1.pdf"
              class="workbook-item" target="_blank" rel="noopener noreferrer">
@@ -456,6 +388,7 @@
             <span class="workbook-dl">↗ View</span>
           </a>
         </div>
+        </div><!-- /accordion-inner -->
         </div><!-- /.resource-group-body: Workbooks -->
       </div>
 
@@ -465,9 +398,10 @@
       <div class="resource-group" id="rg-worksheets">
         <div class="accordion-header" data-target="worksheets-content">
           <span class="accordion-title">Worksheets</span>
-          <span class="accordion-chevron">›</span>
+          <span class="accordion-chevron">+</span>
         </div>
         <div class="accordion-content" id="worksheets-content" style="transition: max-height 0.3s ease;">
+        <div class="accordion-inner">
         <div class="worksheet-list">
           <a href="https://lqmississauga.com/wp-content/uploads/2023/10/Arabic-Writing-Worksheet-v1.2.pdf"
              class="worksheet-item" target="_blank" rel="noopener noreferrer">
@@ -491,6 +425,7 @@
           <a href="https://archive.org/download/LQMWorksheets/LQM-Form-VIII-Practice-v1.pdf" class="pill" target="_blank" rel="noopener noreferrer">Form VIII</a>
           <a href="https://archive.org/download/LQMWorksheets/LQM-Form-X-Practice-v1.pdf"    class="pill" target="_blank" rel="noopener noreferrer">Form X</a>
         </div>
+        </div><!-- /accordion-inner -->
         </div><!-- /.resource-group-body: Worksheets -->
       </div>
 
@@ -500,9 +435,10 @@
       <div class="resource-group" id="rg-suk">
         <div class="accordion-header" data-target="suk-content">
           <span class="accordion-title">Surat-ul-Kahf Vocabulary Practice</span>
-          <span class="accordion-chevron">›</span>
+          <span class="accordion-chevron">+</span>
         </div>
         <div class="accordion-content" id="suk-content" style="transition: max-height 0.3s ease;">
+        <div class="accordion-inner">
         <div class="suk-downloads">
           <a href="https://lqmississauga.com/wp-content/uploads/2023/10/LQ-Mississauga-Surat-ul-Kahf-Vocabulary-v3.pdf"
              class="dl-card" target="_blank" rel="noopener noreferrer">
@@ -515,6 +451,7 @@
             <span class="dl-card-label">Slideshow Version</span>
           </a>
         </div>
+        </div><!-- /accordion-inner -->
         </div><!-- /.resource-group-body: Surat-ul-Kahf -->
       </div>
 
@@ -524,9 +461,10 @@
       <div class="resource-group" id="rg-external">
         <div class="accordion-header" data-target="external-content">
           <span class="accordion-title">External Resources</span>
-          <span class="accordion-chevron">›</span>
+          <span class="accordion-chevron">+</span>
         </div>
         <div class="accordion-content" id="external-content" style="transition: max-height 0.3s ease;">
+        <div class="accordion-inner">
         <div class="ext-resources">
           <a href="http://drvaniya.com" class="ext-resource-link" target="_blank" rel="noopener noreferrer">
             Dr. Abdur Rahim's Blog ↗
@@ -535,6 +473,7 @@
             Tanzil Qur'an Navigator ↗
           </a>
         </div>
+        </div><!-- /accordion-inner -->
         </div><!-- /.resource-group-body: External -->
       </div>
 
@@ -691,6 +630,7 @@
     </div>
   </footer>
 
+  <script src="js/classes.js"></script>
   <script src="js/main.js"></script>
   <script>
     // Set footer year dynamically

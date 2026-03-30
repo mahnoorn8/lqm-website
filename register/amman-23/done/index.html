@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Received — Amman 23 | LQ Mississauga</title>
+  <link rel="stylesheet" href="../../../css/styles.css" />
+</head>
+<body class="done-page">
+
+  <nav id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="../../../index.html" class="nav-logo">
+        <img src="../../../assets/images/logo.jpg" alt="LQ Mississauga" />
+      </a>
+      <button id="nav-hamburger" class="nav-hamburger" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul id="nav-links" class="nav-links" role="list">
+        <li><a href="../../../index.html#about">About</a></li>
+        <li><a href="../../../index.html#classes">Classes</a></li>
+        <li><a href="../../../index.html#resources">Resources</a></li>
+        <li><a href="../../../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="done-body">
+    <div class="done-card">
+      <div class="done-icon" aria-hidden="true">&#10003;</div>
+      <h1>Registration Received!</h1>
+      <p id="done-greeting">Thank you for registering.</p>
+      <p>You have been registered for <strong id="done-class-name">Amman 23</strong>.</p>
+      <p>We'll be in touch via email with class details closer to the start date. Barak Allahu feekum.</p>
+      <a href="../../../index.html" class="btn btn-outline done-back">&larr; Back to Home</a>
+    </div>
+  </main>
+
+  <footer id="site-footer">
+    <div class="container">
+      <div class="footer-logo"><img src="../../../assets/images/logo.jpg" alt="LQ Mississauga" /></div>
+      <p class="footer-name">LQ Mississauga — Language of the Qur'an</p>
+      <p class="footer-email"><a href="mailto:info@lqmississauga.com">info@lqmississauga.com</a></p>
+      <p class="footer-copy">&copy; <span id="footer-year"></span> LQ Mississauga. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../../js/classes.js"></script>
+  <script src="../../../js/main.js"></script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    (function () {
+      try {
+        var name      = sessionStorage.getItem('lqm_registrant_name');
+        var className = sessionStorage.getItem('lqm_registrant_class');
+        if (name) document.getElementById('done-greeting').textContent = 'Thank you, ' + name + '! Your registration has been received.';
+        if (className) document.getElementById('done-class-name').textContent = className;
+        sessionStorage.removeItem('lqm_registrant_name');
+        sessionStorage.removeItem('lqm_registrant_class');
+      } catch (err) {}
+    })();
+  </script>
+
+</body>
+</html>

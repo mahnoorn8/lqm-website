@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register — Ankara 24 | LQ Mississauga</title>
+  <meta name="description" content="Register for Ankara 24 — LQ301 Qur'anic Arabic, online, Saturdays 10:00 AM – 12:45 PM." />
+  <link rel="stylesheet" href="../../css/styles.css" />
+</head>
+<body class="register-page">
+
+  <!-- ======================================================================
+       Navigation
+  ====================================================================== -->
+  <nav id="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="../../index.html" class="nav-logo">
+        <img src="../../assets/images/logo.jpg" alt="LQ Mississauga" />
+      </a>
+
+      <button
+        id="nav-hamburger"
+        class="nav-hamburger"
+        aria-controls="nav-links"
+        aria-expanded="false"
+        aria-label="Toggle menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul id="nav-links" class="nav-links" role="list">
+        <li><a href="../../index.html#about">About</a></li>
+        <li><a href="../../index.html#classes">Classes</a></li>
+        <li><a href="../../index.html#resources">Resources</a></li>
+        <li><a href="../../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ======================================================================
+       Class Header
+  ====================================================================== -->
+  <header class="register-header">
+    <p class="class-tag">Registration</p>
+    <h1>Ankara 24</h1>
+    <div class="class-meta">
+      <span>LQ301 &mdash; Level 3</span>
+      <span>Online</span>
+      <span>Saturdays @ 10:00 AM – 12:45 PM</span>
+      <span>Instructor: Javid Sheikh</span>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       Registration Form
+  ====================================================================== -->
+  <div class="register-body">
+    <div class="register-card">
+      <h2>Register for This Class</h2>
+      <p class="form-intro">
+        All fields are required unless marked optional. Classes are free and open to all
+        who have completed Level 2. We'll follow up by email with class details once registered.
+      </p>
+
+      <!-- TODO: wire form action to Google Sheets API or Netlify Forms. -->
+      <form
+        id="register-form"
+        class="register-form"
+        action="#"
+        method="POST"
+        aria-label="Registration form for Ankara 24"
+        novalidate
+      >
+        <input type="hidden" name="class" value="Ankara 24" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input
+              type="text"
+              id="full-name"
+              name="full_name"
+              placeholder="Your full name"
+              required
+              autocomplete="name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="you@example.com"
+              required
+              autocomplete="email"
+            />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone" class="field-optional">Phone Number</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+1 (416) 000-0000"
+              autocomplete="tel"
+            />
+          </div>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input
+              type="number"
+              id="age"
+              name="age"
+              placeholder="e.g. 25"
+              min="10"
+              max="100"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" required>
+            <option value="" disabled selected>Select gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="prefer-not">Prefer not to say</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="heard-from">How did you hear about us?</label>
+          <select id="heard-from" name="heard_from" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="friend-family">Friend or Family</option>
+            <option value="masjid">Masjid / Islamic Centre</option>
+            <option value="social-media">Social Media</option>
+            <option value="google">Google / Web Search</option>
+            <option value="previous-student">Previous Student</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="comments" class="field-optional">Questions or Comments</label>
+          <textarea
+            id="comments"
+            name="comments"
+            placeholder="Any questions or comments for the instructor…"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-register">
+          Submit Registration
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       Footer
+  ====================================================================== -->
+  <footer id="site-footer">
+    <div class="container">
+      <div class="footer-logo">
+        <img src="../../assets/images/logo.jpg" alt="LQ Mississauga" />
+      </div>
+      <p class="footer-name">LQ Mississauga — Language of the Qur'an</p>
+      <p class="footer-email">
+        <a href="mailto:info@lqmississauga.com">info@lqmississauga.com</a>
+      </p>
+      <p class="footer-copy">&copy; <span id="footer-year"></span> LQ Mississauga. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../../js/classes.js"></script>
+  <script src="../../js/main.js"></script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+    document.getElementById('register-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var name  = document.getElementById('full-name').value.trim();
+      var email = document.getElementById('email').value.trim();
+
+      if (!name || !email) return;
+
+      try {
+        sessionStorage.setItem('lqm_registrant_name',  name);
+        sessionStorage.setItem('lqm_registrant_class', 'Ankara 24');
+      } catch (err) {}
+
+      window.location.href = './done/';
+    });
+  </script>
+
+</body>
+</html>
