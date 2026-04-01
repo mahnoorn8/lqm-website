@@ -305,7 +305,9 @@ document.addEventListener('DOMContentLoaded', function () {
         var icon = targetItem.querySelector('.class-toggle-icon');
         if (icon) icon.textContent = '\u2212';
         setTimeout(function () {
-          targetItem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          var navHeight = document.getElementById('site-nav').offsetHeight || 70;
+          var top = targetItem.getBoundingClientRect().top + window.scrollY - navHeight - 12;
+          window.scrollTo({ top: top, behavior: 'smooth' });
         }, 150);
       }
     }
