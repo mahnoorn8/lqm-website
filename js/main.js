@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(function () {
           var navHeight = document.getElementById('site-nav').offsetHeight || 70;
           var top = targetItem.getBoundingClientRect().top + window.scrollY - navHeight - 12;
-          window.scrollTo({ top: top, behavior: 'instant' });
+          window.scrollTo({ top: top, behavior: 'smooth' });
         }, 400);
       }
     }
