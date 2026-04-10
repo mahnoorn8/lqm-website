@@ -24,5 +24,4 @@
 /class-regulations-ankara-24/    /class-regulations/                      301
 /class-regulations-amman-23/     /class-regulations/                      301
 
-# Catchall — any unmatched URL redirects to home
-/*    /    301
+# Unmatched URLs are caught by 404.html which redirects to home

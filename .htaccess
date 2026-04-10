@@ -1,0 +1,42 @@
+# =============================================================================
+# LQM Mississauga — Apache Redirects (Hostinger)
+# Mirrors the Netlify _redirects file.
+# =============================================================================
+
+Options -Indexes
+RewriteEngine On
+
+# -----------------------------------------------------------------------------
+# Class registration pages
+# -----------------------------------------------------------------------------
+RewriteRule ^alfalah26reg/?$                    /?open=al-falah-26#classes  [R=301,L]
+RewriteRule ^class-registration-algiers-22/?$   /?open=algiers-22#classes   [R=301,L]
+RewriteRule ^class-registration-amman-23/?$     /?open=amman-23#classes     [R=301,L]
+RewriteRule ^class-registration-ankara-24/?$    /?open=ankara-24#classes    [R=301,L]
+RewriteRule ^class-registration-baghdad-24/?$   /?open=baghdad-24#classes   [R=301,L]
+RewriteRule ^class-registration-baku-25/?$      /?open=baku-25#classes      [R=301,L]
+
+# -----------------------------------------------------------------------------
+# Section pages
+# -----------------------------------------------------------------------------
+RewriteRule ^classes/?$               /#classes    [R=301,L]
+RewriteRule ^resources/?$             /#resources  [R=301,L]
+RewriteRule ^madinah-books-resources/?$ /#resources [R=301,L]
+RewriteRule ^notes/?$                 /#resources  [R=301,L]
+RewriteRule ^about-lqm/?$             /#about      [R=301,L]
+RewriteRule ^contact/?$               /#contact    [R=301,L]
+
+# -----------------------------------------------------------------------------
+# Regulations pages
+# -----------------------------------------------------------------------------
+RewriteRule ^class-regulations/?$              /class-regulations/           [L]
+RewriteRule ^in-person-class-regulations/?$    /in-person-class-regulations/ [L]
+RewriteRule ^class-regulations-ankara-24/?$    /class-regulations/           [R=301,L]
+RewriteRule ^class-regulations-amman-23/?$     /class-regulations/           [R=301,L]
+
+# -----------------------------------------------------------------------------
+# Catchall — any unmatched URL redirects to home
+# -----------------------------------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ / [R=301,L]
